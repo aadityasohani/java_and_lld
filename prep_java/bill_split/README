@@ -1,0 +1,42 @@
+Create an expense sharing application.
+
+An expense sharing application is where you can add your expenses and split it among different people.
+
+The app keeps balances between people as in who owes how much to whom.
+
+
+SOLUTION:
+
+User{
+    name,
+    map<user, int> amountOwed,
+    totalAmountOwed
+
+    addAmountOwed(user, int)
+    settleAmount(user, int)
+
+}
+
+Group{
+    name,
+    User[],
+    Expense[] expenses
+
+    addUser()
+    addExpense
+    addAmountOwed(User lender, User borrower, int amount)
+    settleAmount(User lender, User borrower, int amount)
+
+}
+
+
+Expense{
+    reason,
+    amount,
+    User paidBy,
+    User[] dividedBetween
+
+    changeAmount(int newAmount)
+    addDividedBetweenUser(User u)
+    removeDividedBetweenUser(User u)
+}
